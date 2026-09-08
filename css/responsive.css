@@ -1,0 +1,357 @@
+#main {
+    width: auto;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+#footer {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#top {
+    width: auto;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#banner {
+    width: 100%;
+}
+
+#banner img {
+    width: 100%;
+    height: auto;
+}
+
+/* ---------- 首页八菜系宫格：保持整齐方形，不拉伸 ---------- */
+#images {
+    width: auto;
+    max-width: 900px;
+    margin: 40px auto 20px;
+}
+
+div.img {
+    flex: 0 0 200px;
+    margin: 3px;
+    box-sizing: border-box;
+}
+
+div.img a {
+    display: block;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+div.img a img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+}
+
+div.desc {
+    width: auto;
+}
+
+@media (max-width: 720px) {
+    #images {
+        gap: 14px 8px;
+        margin-top: 26px;
+    }
+
+    div.img {
+        flex: 0 0 calc(50% - 8px);
+        max-width: none;
+        margin: 0;
+        box-sizing: border-box;
+    }
+}
+
+/* ---------- 二级页菜品块：两列 → 单列堆叠 ---------- */
+@media (min-width: 641px) and (max-width: 960px) {
+    .lft_img,
+    .rgt_img {
+        float: left;
+        width: 44%;
+        max-width: 460px;
+        margin: 10px 0 20px 3%;
+    }
+
+    .lft_txt,
+    .rgt_txt {
+        float: right;
+        width: 50%;
+        height: auto;
+        margin: 10px 1% 0 0;
+    }
+
+    .lft_img img,
+    .rgt_img img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 640px) {
+    #main {
+        padding: 0 12px;
+    }
+
+    #main h1 {
+        width: 92%;
+        margin: 26px auto;
+        font-size: 22px;
+    }
+
+    .lft_img,
+    .rgt_img,
+    .lft_txt,
+    .rgt_txt {
+        float: none;
+        width: auto;
+        height: auto;
+        margin: 14px auto;
+        text-align: center;
+    }
+
+    .rgt_txt,
+    .lft_txt {
+        text-align: left;
+    }
+
+    .lft_img img,
+    .rgt_img img {
+        display: block;
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .rgt_txt p,
+    .lft_txt p {
+        font-size: 18px;
+        line-height: 1.65;
+    }
+}
+
+/* ---------- 三级页：正文左侧、技法栏右侧；窄屏上下堆叠 ---------- */
+#box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+#maintxt {
+    order: 1;
+    width: auto;
+    min-width: 0;
+    flex: 1 1 0;
+}
+
+#sidebar {
+    order: 2;
+    position: static;
+    width: 300px;
+    flex: 0 0 300px;
+}
+
+@media (max-width: 820px) {
+    #maintxt {
+        flex: 1 1 100%;
+        width: auto;
+    }
+
+    #sidebar {
+        flex: 1 1 100%;
+        width: auto;
+        margin: 22px 0 0;
+        padding: 6px 4px 12px;
+    }
+}
+
+/* ---------- 顶部导航条：桌面同行，窄屏换行成两行 ---------- */
+@media (min-width: 561px) and (max-width: 760px) {
+    #topnav #topform {
+        left: auto;
+        right: 6px;
+    }
+
+    #bread {
+        max-width: 46%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 560px) {
+    #topnav {
+        position: static;
+        height: auto;
+    }
+
+    #top {
+        display: block;
+        width: auto;
+        max-width: none;
+        height: auto;
+        padding: 8px 10px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    #bread {
+        position: static;
+        display: block;
+        margin: 0 0 6px;
+        font-size: 13px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    #topnav #topform {
+        position: static;
+        display: flex;
+        width: 100%;
+        gap: 8px;
+        margin: 0;
+    }
+
+    .search-box {
+        flex: 1;
+        min-width: 0;
+    }
+
+    #topnav #topform input:not(#sbmt) {
+        width: 100%;
+        flex: none;
+        min-width: 0;
+    }
+
+    #main {
+        top: 0;
+    }
+
+    #footer {
+        margin-top: 24px;
+    }
+}
+
+/* ---------- 主导航：单行 → 每行4项 → 每行2项 ---------- */
+@media (min-width: 561px) and (max-width: 720px) {
+    #nav {
+        flex-wrap: wrap;
+    }
+
+    #nav li {
+        flex: 1 1 25%;
+    }
+}
+
+@media (max-width: 560px) {
+    #nav {
+        flex-wrap: wrap;
+    }
+
+    #nav li {
+        flex: 1 1 50%;
+    }
+
+    #nav li a {
+        font-size: 16px;
+        height: 42px;
+    }
+}
+
+/* ---------- 本地搜索建议下拉与提示 ---------- */
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-suggest {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 300;
+    display: none;
+    min-width: 230px;
+    max-width: 80vw;
+    background: #fffdf8;
+    border: 1px solid rgba(159, 39, 39, 0.35);
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+    overflow: hidden;
+}
+
+.search-suggest.open {
+    display: block;
+}
+
+.search-suggest a {
+    display: block;
+    padding: 8px 12px;
+    color: #4a2b21;
+    font: 14px 宋体, SimSun, sans-serif;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.search-suggest a:hover,
+.search-suggest a.active {
+    background: #f4e3d1;
+    color: #8e241f;
+}
+
+.search-tip {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 300;
+    padding: 7px 12px;
+    background: #6f1b18;
+    color: #fff;
+    font: 13px 宋体, SimSun, sans-serif;
+    border-radius: 6px;
+    white-space: nowrap;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 560px) {
+    .search-suggest {
+        min-width: calc(100vw - 36px);
+        max-width: none;
+    }
+}
+
+/* ---------- 触屏与无障碍 ---------- */
+@media (hover: none) {
+    .lft_img a:hover img,
+    .rgt_img a:hover img,
+    div.img a:hover img {
+        transform: none;
+    }
+}
+
+:focus-visible {
+    outline: 2px solid #9f2727;
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}

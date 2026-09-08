@@ -1,0 +1,72 @@
+*{  margin:0px;  padding:0px;  }  /* 去掉所有默认的margin和
+padding*/ 
+body {  background:url(../images/back.png );  } 
+#topnav{  /* 顶部固定导航条*/ 
+     width:100%;   position:fixed;   height:40px;  left:0;  
+top:0; 
+     background:#c1bfba;   z-index:100; } 
+#top{  /* 用于固定元素的参照块*/ 
+     width:1000px;  height:40px;  margin:0 auto;   
+position:relative; 
+     font:12px  
+黑体; 
+} 
+#top a:hover{  color:#9f2727; } 
+
+#sbmt {  
+     width:auto;  min-width:56px;  height:26px;  padding:0 18px;
+     border:1px solid #8e241f;  border-radius:13px;
+     background:linear-gradient(180deg,#b23a30,#9f2727);
+     color:#fff;  font:13px 黑体;  text-align:center;  cursor:pointer;
+     transition:all .3s;  box-shadow:0 1px 3px rgba(0,0,0,.15);
+} 
+#sbmt:hover {  background:linear-gradient(180deg,#8e241f,#6f1b18);  border-color:#6f1b18;  } 
+#topnav #topform input:not(#sbmt){  /*搜索输入框*/ 
+     width:190px;  height:26px;  padding:0 14px;
+     border:1px solid rgba(159,39,39,.45);  border-radius:13px;
+     background:#fffdf8;  color:#4a2b21;
+     font:13px 宋体;  outline:none;  vertical-align:middle;
+     transition:border-color .3s, box-shadow .3s;
+} 
+#topnav #topform input:not(#sbmt):focus{ 
+     border-color:#9f2727;  box-shadow:0 0 0 2px rgba(159,39,39,.18);
+} 
+
+#bread{   /*面包屑的定位，相对于#top*/ 
+     position:absolute;   left:8px;   top:15px; font:15px 黑体;  } 
+
+#topnav #topform{   /*顶部搜索框：flex 保证输入框与按钮同行且垂直居中*/ 
+     position:absolute;  top:8px;  left:400px;  display:flex;  align-items:center;  gap:8px; } 
+
+#main{   /*主内容块*/ 
+     width:1000px;  background:#e9e4dc;   height:1500px; 
+     margin:0 auto;   position:relative; 
+     top:40px;   /* 留出顶部导航条的位置*/ 
+} 
+
+#banner img{  width:1000px;     height:320px; } 
+/*主导航条：单行、等宽块、文字居中*/ 
+#nav {   background:#ae9e9e;   margin:0;  padding:0;  list-style:none;  display:flex;  } 
+#nav li{  flex:1 1 0;   min-width:0;  } 
+#nav li a{  display:flex;  align-items:center;  justify-content:center;
+     height:46px;  padding:0 4px;  box-sizing:border-box;
+     font:18px 楷体;  white-space:nowrap;  text-align:center;
+     text-decoration:none;  color:black;
+} 
+#nav li a:hover{  background:#E8A94C;  border-bottom:4px brown solid;  } 
+#nav li a#current{  background:#961818;  }   /* 当前栏目*/ 
+/*底部版权区*/ 
+#footer{  margin-top:40px;  width:100%;  background:#333; 
+     color:white;   padding:10px;   } 
+#footer p{   text-align:center; }
+#images{  width:900px;  margin:50px auto;  display:flex;  flex-wrap:wrap;  justify-content:center;  align-items:flex-start; } 
+div.img  {  margin:3px;   text-align:center;  } 
+div.img a img   {  display:inline;   margin:3px;   
+width:200px; 
+   height:200px;   transition:transform 0.8s;   } 
+div.img a:hover img  {  transform:scale(1.05);   }   /*缩放特效
+*/ 
+div.desc   { 
+  text-align:center;   font:12px黑体;   width:200px;   
+margin:10px 5px 10px 5px;   } 
+#main{   height:auto;  padding-bottom:30px;  }   /*首页主内容高度自适应，避免内容溢出被页脚遮挡*/
